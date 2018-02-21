@@ -1,19 +1,15 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import menus from '@/config/menu-config'
+import Dashboard from '../components/Dashboard.vue'
+import Settings from '../components/Settings.vue'
+import Messages from '../components/Messages.vue'
+import Services from '../components/Services.vue'
 
-Vue.use(Router)
-
-var routes = []
-
-menus.forEach((item) => {
-  item.sub.forEach((sub) => {
-    routes.push({
-      path: `/${sub.componentName}`,
-      name: sub.componentName,
-      component: () => import(`@/components/${sub.componentName}`)
-    })
-  })
-})
-
-export default new Router({ routes })
+export default [
+  { path: '/dashboard',
+    component: Dashboard},
+  { path: '/settings',
+    component: Settings},
+  { path: '/messages',
+    component: Messages},
+  { path: '/services',
+    component: Services}
+]
