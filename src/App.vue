@@ -1,19 +1,4 @@
 <template>
-  <el-row>
-    <el-col :span="24">
-      <div class="head-wrap">
-       <h1>Cloudeity</h1>
-       </div>
-    </el-col>
-  </el-row>
-</template>
-
-<style scoped>
-.head-wrap{
-
-}
-</style>
-<template>
   <div id="app">
     <el-container>
       <el-header class="header">
@@ -27,12 +12,14 @@
           <router-view></router-view>
         </el-main>
       </el-container>
+      <el-footer class="footer"><h4>Cloudeity</h4></el-footer>
     </el-container>
   </div>
 </template>
 <script>
 import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'app',
@@ -42,7 +29,8 @@ export default {
   },
   components: {
     'navmenu': NavMenu,
-    'vheader': Header
+    'vheader': Header,
+    'vfooter': Footer
   },
   methods: {
     togNavDrawer (tog) {
@@ -54,9 +42,11 @@ export default {
 </script>
 
 <style>
-body{
-  background-color:#FAFBFD;
-  margin:0px;
+html, body{
+    height:100%;
+    width: 100%;
+    background-color:#FAFBFD;
+    margin:0px;
 }
 .header {
   background-color: #fff;
@@ -68,5 +58,15 @@ body{
     box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
     padding: 10px;
     z-index:10;
+}
+footer {
+  background-color: #409EFF !important;
+  position: absolute;
+  z-index:10;
+  bottom:0px;
+  width:100%;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
 }
 </style>

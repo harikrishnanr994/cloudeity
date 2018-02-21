@@ -1,5 +1,5 @@
 <template>
-  <el-row class="tac">
+  <el-row class="tac noscroll">
   <el-col :span="24">
   <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <router-link to="/dashboard" exact>
@@ -35,17 +35,22 @@
 </template>
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 700px;
-  position: relative;
+  width: 150px;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom:0;
+  position: fixed;
   -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
   -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   padding: 10px;
 }
+.noscroll { overflow: hidden; }
 .el-menu-vertical-demo{
-  min-height: 700px;
-  position: relative;
+  height: 100%;
+  min-height:100%;
+  position: fixed;
+  margin-bottom:0;
   -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
   -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
