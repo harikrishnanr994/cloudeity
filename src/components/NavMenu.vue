@@ -26,8 +26,6 @@
     <span slot="title">Settings</span>
   </el-menu-item>
 </router-link>
-  <button v-on:click="isCollapse = !isCollapse">Toggle</button>
-
 </el-menu>
 
   </el-col>
