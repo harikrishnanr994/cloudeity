@@ -35,7 +35,7 @@
 </template>
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 150px;
+  width: 200px;
   height: 100%;
   overflow: hidden;
   margin-bottom:0;
@@ -43,18 +43,15 @@
   -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
   -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
-  padding: 10px;
 }
 .noscroll { overflow: hidden; }
 .el-menu-vertical-demo{
   height: 100%;
   min-height:100%;
   position: fixed;
-  margin-bottom:0;
   -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
   -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
-  padding: 10px;
 }
 .is-active{
   background-color: #ecf5fe;
