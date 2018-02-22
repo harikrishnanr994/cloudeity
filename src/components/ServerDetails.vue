@@ -111,3 +111,9 @@ export default {
   }
 }
 </script>
+<style>
+.cell{
+  font-family: Roboto;
+  font-weight: 200;
+}
+</style>
