@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac noscroll">
   <el-col :span="24">
-  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed">
   <router-link to="/dashboard" exact>
     <el-menu-item index="1">
     <i class="el-icon-menu"></i>
@@ -70,6 +70,11 @@ a.router-link-active {
 import {bus} from '../main'
 
 export default {
+  data () {
+    return {
+      collapsed: ''
+    }
+  },
   props: {
     isCollapse: Boolean
   },
@@ -83,8 +88,11 @@ export default {
   },
   created () {
     bus.$on('toggleDrawer', data => {
-      this.isCollapse = data
+      console.log(data)
+      this.collapsed = data
     })
+  },
+  updated () {
   }
 }
 </script>
