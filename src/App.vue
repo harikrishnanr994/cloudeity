@@ -55,7 +55,7 @@ html, body{
     -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
     box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
     padding: 10px;
-    z-index:10;
+    z-index:30;
 }
 .el-main{
 width:100% !important;
@@ -65,7 +65,7 @@ margin-right:0px;
 }
 footer {
   background-color: #409EFF !important;
-  z-index:10;
+  z-index:30;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -74,6 +74,9 @@ footer {
   color: #fff;
   text-align: center;
   vertical-align: middle;
+}
+aside{
+  z-index:20;
 }
 h1,h2,h3,h4,p,span{
   font-family:Roboto;
