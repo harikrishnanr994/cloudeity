@@ -1,15 +1,84 @@
 <template>
   <div>
-    <h1 class="dash">{{msg}}</h1>
+    <h1>Dashboard</h1>
     <el-row>
       <el-col :span="24">
-        <div class="grid-content bg-purple-dark">
+        <div class="grid-content">
+            <el-row :gutter="10">
+              <el-col :xs="24" :sm="18" :md="20" :lg="20" :xl="22">
+                <h3 class="title">Launch a new website</h3>
+                <p class="para">To launch a new website using wordpress</p>
+              </el-col>
+              <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
+                <el-button type="primary" class="button" plain>Launch</el-button>
+              </el-col>
+            </el-row>
         </div>
+        <div class="spacer">&nbsp;</div>
+        <div class="grid-content">
+            <el-row :gutter="10">
+              <el-col :xs="24" :sm="18" :md="20" :lg="20" :xl="22">
+                <h3 class="title">Launch a new free website</h3>
+                <p class="para">To launch a new free website using wordpress</p>
+              </el-col>
+              <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
+                <el-button type="primary" class="button" plain>Launch</el-button>
+              </el-col>
+            </el-row>
+        </div>
+        <div class="spacer">&nbsp;</div><div class="grid-content">
+            <el-row :gutter="10">
+              <el-col :xs="24" :sm="18" :md="20" :lg="20" :xl="22">
+                <h3 class="title">Launch a new free website</h3>
+                <p class="para">To launch a new free website using wordpress</p>
+              </el-col>
+              <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
+                <el-button type="primary" class="button" plain>Launch</el-button>
+              </el-col>
+            </el-row>
+        </div>
+        <div class="spacer">&nbsp;</div>
+        <div class="spacer">&nbsp;</div>
       </el-col>
-      DASHBOARD
     </el-row>
   </div>
 </template>
+
+<style>
+  .el-col {
+    border-radius: 4px;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+    margin: 10px;
+    background-color: #fff;
+      -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+      -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+      box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+      padding: 5px;
+      overflow-y: scroll;
+  }
+  .title{
+    margin-left: 10px;
+  }
+  .para{
+    margin-left: 20px;
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .button {
+     margin: 10px;
+     margin-top: 25px;
+    }
+    .spacer {
+      height: 20px;
+     }
+</style>
+
 <script>
 export default {
   name: 'Dashboard',

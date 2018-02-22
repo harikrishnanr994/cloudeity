@@ -45,10 +45,12 @@
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
 }
 .noscroll { overflow: hidden; }
+
 .el-menu-vertical-demo{
   height: 100%;
   min-height:100%;
   position: fixed;
+  margin-top:60px;
   -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
   -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
   box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);

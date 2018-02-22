@@ -5,7 +5,7 @@
         <vheader v-bind:isCollapse="isCollapse" v-on:toggleDrawer="togNavDrawer($event)"/>
       </el-header>
       <el-container>
-        <el-aside width="200px">
+        <el-aside>
           <navmenu v-bind:isCollapse="isCollapse" ></navmenu>
         </el-aside>
         <el-main>
@@ -45,28 +45,43 @@ export default {
 html, body{
     height:100%;
     width: 100%;
-    background-color:#FAFBFD;
+    background-color:#FBFBFD;
     margin:0px;
 }
 .header {
   background-color: #fff;
   color: #409EFF;
   line-height: 60px;
-  position: relative;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
     -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0,0.2);
     -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
     box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
     padding: 10px;
     z-index:10;
 }
+.el-main{
+width:100% !important;
+height:100%;
+margin-left:-200px;
+margin-right:0px;
+}
 footer {
   background-color: #409EFF !important;
-  position: absolute;
   z-index:10;
-  bottom:0px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width:100%;
   color: #fff;
   text-align: center;
   vertical-align: middle;
+}
+h1,h2,h3,h4,p,span{
+  font-family:Roboto;
+  font-weight: 200;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <el-row>
-    <el-col :xs="6" :sm="6" :md="3" :lg="2" :xl="2">
+    <el-col :xs="3" :sm="3" :md="1" :lg="1" :xl="1">
       <div>
         <el-button type="text" v-on:click="toggleDrawer()">
-          <icon name="bars" scale="2"></icon>
+          <icon name="bars" scale="1.3"></icon>
         </el-button>
       </div>
     </el-col>
-    <el-col :xs="18" :sm="18" :md="21" :lg="22" :xl="22">
+    <el-col :xs="21" :sm="21" :md="23" :lg="23" :xl="23">
       <h1>Cloudeity</h1>
     </el-col>
   </el-row>
@@ -33,9 +33,9 @@ h1{
   color: #409EFF;
 }
 .fa-icon{
-  margin: auto;
-  margin-left:20px;
-  margin-top:-10px;
+  margin-left:10px;
+  margin-top:-30px;
+  margin-bottom:5px;
   color: #409EFF;
 }
 </style>
