@@ -43,14 +43,22 @@ h1{
 <script>
 import {bus} from '../main'
 export default {
+  data () {
+    return {
+      collapsed: ''
+    }
+  },
   props: {
     isCollapse: Boolean
   },
   methods: {
     toggleDrawer () {
-      this.isCollapse = !this.isCollapse
-      bus.$emit('toggleDrawer', this.isCollapse)
+      this.collapsed = !this.collapsed
+      bus.$emit('toggleDrawer', this.collapsed)
     }
+  },
+  created () {
+    this.collapsed = this.isCollapse
   }
 }
 </script>

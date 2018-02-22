@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header class="header">
-        <vheader v-bind:isCollapse="isCollapse" v-on:toggleDrawer="togNavDrawer($event)"/>
+        <vheader v-bind:isCollapse="isCollapse"/>
       </el-header>
       <el-container>
         <el-aside>
@@ -31,11 +31,6 @@ export default {
     'navmenu': NavMenu,
     'vheader': Header,
     'vfooter': Footer
-  },
-  methods: {
-    togNavDrawer (tog) {
-      this.isCollapse = tog
-    }
   }
 }
 
