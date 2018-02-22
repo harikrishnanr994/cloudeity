@@ -28,12 +28,11 @@
         </div>
         <div class="spacer">&nbsp;</div><div class="grid-content">
             <el-row :gutter="10">
-              <el-col :xs="24" :sm="18" :md="20" :lg="20" :xl="22">
-                <h3 class="title">Launch a new free website</h3>
-                <p class="para">To launch a new free website using wordpress</p>
+              <el-col :span="24">
+                <h3 class="title">Launched  Websites</h3>
               </el-col>
-              <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
-                <el-button type="primary" class="button" plain>Launch</el-button>
+              <el-col :span="24" class="center">
+                <serverdetail></serverdetail>
               </el-col>
             </el-row>
         </div>
@@ -80,12 +79,12 @@
 </style>
 
 <script>
+import ServerDetails from '@/components/ServerDetails'
+
 export default {
-  name: 'Dashboard',
-  data () {
-    return {
-      msg: 'Dashboard'
-    }
+  name: 'app',
+  components: {
+    'serverdetail': ServerDetails
   }
 }
 </script>
