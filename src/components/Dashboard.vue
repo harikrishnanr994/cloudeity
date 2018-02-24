@@ -10,7 +10,9 @@
                 <p class="para">To launch a new website using wordpress</p>
               </el-col>
               <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
+              <router-link to="/paid" exact>
                 <el-button type="primary" class="button" plain>Launch</el-button>
+              </router-link>
               </el-col>
             </el-row>
         </div>
@@ -22,7 +24,9 @@
                 <p class="para">To launch a new free website using wordpress</p>
               </el-col>
               <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
+              <router-link to="/free" exact>
                 <el-button type="primary" class="button" plain>Launch</el-button>
+              </router-link>
               </el-col>
             </el-row>
         </div>
