@@ -26,6 +26,18 @@
     <span slot="title">Settings</span>
   </el-menu-item>
 </router-link>
+<router-link to="/free" exact>
+  <el-menu-item index="5">
+  <i class="el-icon-plus"></i>
+  <span slot="title">Free Website</span>
+</el-menu-item>
+</router-link>
+<router-link to="/paid" exact>
+  <el-menu-item index="6">
+  <i class="el-icon-plus"></i>
+  <span slot="title">Paid Website</span>
+</el-menu-item>
+</router-link>
 </el-menu>
 
   </el-col>
