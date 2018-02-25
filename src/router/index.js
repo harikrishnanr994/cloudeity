@@ -2,7 +2,7 @@ import Dashboard from '../components/Dashboard.vue'
 import Settings from '../components/Settings.vue'
 import Messages from '../components/Messages.vue'
 import Services from '../components/Services.vue'
-import Free from '../components/Free.vue'
+import Launchserver from '../components/Launchserver.vue'
 import Paid from '../components/Paid.vue'
 
 export default [
@@ -14,8 +14,8 @@ export default [
     component: Messages},
   { path: '/services',
     component: Services},
-  { path: '/free',
-    component: Free},
+  { path: '/Launchserver',
+    component: Launchserver},
   { path: '/paid',
     component: Paid}
 ]

@@ -26,10 +26,10 @@
     <span slot="title">Settings</span>
   </el-menu-item>
 </router-link>
-<router-link to="/free" exact>
+<router-link to="/Launchserver" exact>
   <el-menu-item index="5">
   <i class="el-icon-plus"></i>
-  <span slot="title">Free Website</span>
+  <span slot="title">Launch website</span>
 </el-menu-item>
 </router-link>
 <router-link to="/paid" exact>

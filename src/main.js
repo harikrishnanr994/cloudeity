@@ -6,10 +6,11 @@ import Icon from 'vue-awesome/components/Icon'
 import App from './App'
 import Routes from './router/index.js'
 import VueRouter from 'vue-router'
+import locale from 'element-ui/lib/locale/lang/en'
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 Vue.use(VueRouter)
 Vue.component('icon', Icon)
 
