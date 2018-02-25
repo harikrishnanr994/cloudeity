@@ -42,7 +42,7 @@
     </el-row>
   </div>
 </template>
-<style>
+<style scoped>
   .el-col {
     border-radius: 4px;
     font-family:Roboto;
@@ -81,6 +81,12 @@
      height: 120px;
     line-height: 20px;
      }
+</style>
+<style>
+.el-textarea__inner{
+height: 120px;
+line-height: 20px;
+}
 </style>
 
 <script>
