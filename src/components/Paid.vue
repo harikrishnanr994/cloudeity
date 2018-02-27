@@ -314,8 +314,8 @@
   .el-button{
   padding:-30px;
   margin-bottom:50px;
-  background-color: rgba(255,255,255,0.1);
-  border-color:#fff;
+  background-color: rgba(255,255,255,0);
+  border-color: rgba(255,255,255,0);
   }
   .el-tabs{
     margin-left:30px;
