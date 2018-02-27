@@ -32,7 +32,7 @@
   <span slot="title">Launch website</span>
 </el-menu-item>
 </router-link>
-<router-link to="/paid" exact>
+<router-link to="/paid/" exact>
   <el-menu-item index="6">
   <i class="el-icon-plus"></i>
   <span slot="title">Paid Website</span>

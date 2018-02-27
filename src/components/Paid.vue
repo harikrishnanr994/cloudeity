@@ -6,30 +6,21 @@
         <div class="grid-content center">
           <div class="spacer">&nbsp;</div>
           <div class="spacer">&nbsp;</div>
-          <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tabs v-model="activeTab" @tab-click="handleClick">
             <el-tab-pane label="Category" name="category">
-              <el-row>
-                <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
-                  <el-card :body-style="{ padding: '0px' }">
-                    <img src="@/assets/hamburger.png" class="image">
-                    <div style="padding: 14px;">
-                      <span>Yummy hamburger</span>
-                      <div class="bottom clearfix">
-                        <time class="time">{{ currentDate }}</time>
-                        <el-button>select</el-button>
-                      </div>
-                    </div>
-                  </el-card>
-                </el-col>
-              </el-row>
+
             </el-tab-pane>
-            <el-tab-pane label="Theme" name="theme" disabled>Choose Theme</el-tab-pane>
-            <el-tab-pane label="Hosting" name="hosting" disabled>Choose Hosting</el-tab-pane>
+            <el-tab-pane label="Theme" name="theme" :disabled="theme_disabled"></el-tab-pane>
+            <el-tab-pane label="Hosting" name="hosting" :disabled="hosting_disabled"></el-tab-pane>
 
           </el-tabs>
+
         <div class="spacer">&nbsp;</div>
         <div class="spacer">&nbsp;</div>
         </div>
+        <keep-alive>
+        <component :is="component" :categories="categories" :themeSelected="themeSelected"></component>
+      </keep-alive>
       </el-col>
     </el-row>
   </div>
@@ -107,17 +98,71 @@
 </style>
 
 <script>
+import Choose from '../components/Choose.vue'
+import Theme from '../components/Theme.vue'
+import Hosting from '../components/Hosting.vue'
+
+import { bus } from '../main.js'
+
 export default {
   data () {
     return {
-      activeName: 'category',
-      currentDate: new Date()
+      activeTab: '',
+      currentDate: new Date(),
+      component : 'choose',
+      themeSelected: '',
+      theme_disabled: true,
+      hosting_disabled: true,
+      categories: [
+        {
+          Name: 'Product Showcase'
+        },
+        {
+          Name: 'E-Commerce'
+        },
+        {
+          Name: 'Job Oriented'
+        },
+        {
+          Name: 'Company Profile'
+        },
+        {
+          Name: 'Construction'
+        },
+        {
+          Name: 'Photography'
+        }
+      ]
     }
   },
   methods: {
     handleClick (tab, event) {
-      console.log(tab, event)
+      switch (this.activeTab) {
+        case 'category':
+          this.component = 'choose';
+          this.theme_disabled = true;
+          this.hosting_disabled = true;
+          break;
+        case 'theme':
+          this.component = 'theme';
+          break;
+        case 'hosting':
+          this.component = 'hosting';
+          break;
+        default:
+      }
     }
+  },
+  components: {
+    'choose': Choose,
+    'theme': Theme,
+    'hosting': Hosting
+  },
+  created(){
+    bus.$on('chooseTheme', (data) => {
+      this.themeSelected = data
+      this.theme_disabled = false
+    })
   }
 }
 </script>
