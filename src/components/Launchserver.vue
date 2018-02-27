@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h1>Dashboard</h1>
+  <div class="spacer">&nbsp;</div>
+  <div class="spacer">&nbsp;</div>
     <el-row>
       <el-col :span="24">
         <div class="grid-content">
             <el-row :gutter="10">
-              <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
+              <el-col :xs="24" :sm="24" :md="24" :lg="20" :xl="20">
                 <div class="spacer">&nbsp;</div>
                 <div class="spacer">&nbsp;</div>
                 <el-form ref="form" :model="serverForm" label-width="120px" size="mini">

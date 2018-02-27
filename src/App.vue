@@ -60,8 +60,6 @@ html, body{
 .el-main{
 width:100% !important;
 height:100%;
-margin-left:-200px;
-margin-right:0px;
 }
 footer {
   background-color: #409EFF !important;
@@ -77,7 +75,9 @@ footer {
 }
 aside{
   z-index:20;
+  max-width:100px;
 }
+
 h1,h2,h3,h4,p,span{
   font-family:Roboto;
   font-weight: 200;
