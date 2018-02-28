@@ -4,7 +4,6 @@ import Messages from '../components/Messages.vue'
 import Services from '../components/Services.vue'
 import Launchserver from '../components/Launchserver.vue'
 import Paid from '../components/Paid.vue'
-import Theme from '../components/Theme.vue'
 
 export default [
   { path: '/dashboard',

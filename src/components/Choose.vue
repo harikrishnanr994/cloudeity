@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <el-col :span="6" v-for="category in categories">
+    <el-col :span="6" v-for="category in categories" :key="category['Name']">
       <el-card :body-style="{ padding: '0px' }">
         <img src="@/assets/hamburger.png" class="image">
         <div style="padding: 14px;">
@@ -19,7 +19,7 @@ import { bus } from '../main.js'
 export default{
   props: ['categories'],
   methods : {
-    chooseTheme(name){
+    chooseTheme (name){
       bus.$emit('chooseTheme',name);
     }
   }
