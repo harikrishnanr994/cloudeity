@@ -93,10 +93,10 @@ export default {
   },
   methods: {
     changeIndextoFree () {
-      bus.$emit('changeIndex','5')
+      bus.$emit('changeIndex', '5')
     },
     changeIndextoPaid () {
-      bus.$emit('changeIndex','6')
+      bus.$emit('changeIndex', '6')
     }
   }
 }

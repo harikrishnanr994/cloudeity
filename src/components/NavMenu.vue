@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac noscroll">
   <el-col :span="24">
-  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed" :default-active="defaultActive" :router="router_var">
+  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed"  :router="router_var">
   <router-link to="/dashboard" exact>
     <el-menu-item index="1">
     <i class="el-icon-menu"></i>
@@ -87,8 +87,8 @@ export default {
   data () {
     return {
       collapsed: '',
-      defaultActive : '1',
-      router_var : true
+      defaultActive: '1',
+      router_var: true
     }
   },
   props: {
@@ -105,26 +105,25 @@ export default {
   created () {
     let path = this.$route.path.substr(1).toLowerCase()
     console.log(path)
-    switch(path)
-    {
+    switch (path) {
       case 'dashboard':
-          this.defaultActive = '1';
-          break;
+        this.defaultActive = '1'
+        break
       case 'messages':
-          this.defaultActive = '2';
-          break;
+        this.defaultActive = '2'
+        break
       case 'services':
-          this.defaultActive = '3';
-          break;
+        this.defaultActive = '3'
+        break
       case 'settings':
-          this.defaultActive = '4';
-          break;
+        this.defaultActive = '4'
+        break
       case 'launchserver':
-          this.defaultActive = '5';
-          break;
+        this.defaultActive = '5'
+        break
       case 'paid':
-          this.defaultActive = '6';
-          break;
+        this.defaultActive = '6'
+        break
     }
     bus.$on('toggleDrawer', data => {
       console.log(data)
@@ -138,26 +137,26 @@ export default {
     console.log('Updated')
     let path = this.$route.path.substr(1).toLowerCase()
     console.log(path)
-    switch(path)
-    {
+    switch (path) {
       case 'dashboard':
-          this.defaultActive = '1';
-          break;
+        this.defaultActive = '1'
+        break
       case 'messages':
-          this.defaultActive = '2';
-          break;
+        this.defaultActive = '2'
+        break
       case 'services':
-          this.defaultActive = '3';
-          break;
+        this.defaultActive = '3'
+        break
       case 'settings':
-          this.defaultActive = '4';
-          break;
+        this.defaultActive = '4'
+        break
       case 'launchserver':
-          this.defaultActive = '5';
-          break;
+        this.defaultActive = '5'
+        break
       case 'paid':
-          this.defaultActive = '6';
-          break;
-    }  }
+        this.defaultActive = '6'
+        break
+    }
+  }
 }
 </script>

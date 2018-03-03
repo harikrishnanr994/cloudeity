@@ -149,7 +149,7 @@ export default {
   },
   methods: {
     handleClick (tab, event) {
-      bus.$emit('tab-click',tab,event)
+      bus.$emit('tab-click', tab, event)
       switch (this.activeTab) {
         case 'category':
           this.component = 'choose'
