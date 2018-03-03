@@ -10,7 +10,7 @@
                 <p class="para">To launch a new website using wordpress</p>
               </el-col>
               <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
-              <router-link to="/paid" exact>
+              <router-link to="/paid" v-on:click.native="changeIndextoPaid()" exact>
                 <el-button type="primary" class="button" plain>Launch</el-button>
               </router-link>
               </el-col>
@@ -24,7 +24,7 @@
                 <p class="para">To launch a new free website using wordpress</p>
               </el-col>
               <el-col :xs="24" :sm="6" :md="4" :lg="4" :xl="2" class="center">
-              <router-link to="/Launchserver" exact>
+              <router-link to="/launchserver" v-on:click.native="changeIndextoFree()" exact>
                 <el-button type="primary" class="button" plain>Launch</el-button>
               </router-link>
               </el-col>
@@ -84,11 +84,20 @@
 
 <script>
 import ServerDetails from '@/components/ServerDetails'
+import {bus} from '../main'
 
 export default {
   name: 'app',
   components: {
     'serverdetail': ServerDetails
+  },
+  methods: {
+    changeIndextoFree () {
+      bus.$emit('changeIndex','5')
+    },
+    changeIndextoPaid () {
+      bus.$emit('changeIndex','6')
+    }
   }
 }
 </script>

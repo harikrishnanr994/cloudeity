@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac noscroll">
   <el-col :span="24">
-  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed">
+  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed" :default-active="defaultActive" :router="router_var">
   <router-link to="/dashboard" exact>
     <el-menu-item index="1">
     <i class="el-icon-menu"></i>
@@ -26,13 +26,13 @@
     <span slot="title">Settings</span>
   </el-menu-item>
 </router-link>
-<router-link to="/Launchserver" exact>
+<router-link to="/launchserver" exact>
   <el-menu-item index="5">
   <i class="el-icon-plus"></i>
   <span slot="title">Launch website</span>
 </el-menu-item>
 </router-link>
-<router-link to="/paid/" exact>
+<router-link to="/paid" exact>
   <el-menu-item index="6">
   <i class="el-icon-plus"></i>
   <span slot="title">Paid Website</span>
@@ -86,7 +86,9 @@ import {bus} from '../main'
 export default {
   data () {
     return {
-      collapsed: ''
+      collapsed: '',
+      defaultActive : '1',
+      router_var : true
     }
   },
   props: {
@@ -101,12 +103,61 @@ export default {
     }
   },
   created () {
+    let path = this.$route.path.substr(1).toLowerCase()
+    console.log(path)
+    switch(path)
+    {
+      case 'dashboard':
+          this.defaultActive = '1';
+          break;
+      case 'messages':
+          this.defaultActive = '2';
+          break;
+      case 'services':
+          this.defaultActive = '3';
+          break;
+      case 'settings':
+          this.defaultActive = '4';
+          break;
+      case 'launchserver':
+          this.defaultActive = '5';
+          break;
+      case 'paid':
+          this.defaultActive = '6';
+          break;
+    }
     bus.$on('toggleDrawer', data => {
       console.log(data)
       this.collapsed = data
     })
+    bus.$on('changeIndex', data => {
+      this.defaultActive = data
+    })
   },
   updated () {
-  }
+    console.log('Updated')
+    let path = this.$route.path.substr(1).toLowerCase()
+    console.log(path)
+    switch(path)
+    {
+      case 'dashboard':
+          this.defaultActive = '1';
+          break;
+      case 'messages':
+          this.defaultActive = '2';
+          break;
+      case 'services':
+          this.defaultActive = '3';
+          break;
+      case 'settings':
+          this.defaultActive = '4';
+          break;
+      case 'launchserver':
+          this.defaultActive = '5';
+          break;
+      case 'paid':
+          this.defaultActive = '6';
+          break;
+    }  }
 }
 </script>

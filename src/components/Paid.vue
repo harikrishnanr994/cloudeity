@@ -6,20 +6,20 @@
         <div class="grid-content">
           <div class="spacer">&nbsp;</div>
           <div class="spacer">&nbsp;</div>
-          <el-tabs v-model="activeTab" @tab-click="handleClick">
+          <el-tabs v-model="activeTab" @tab-click="handleClick" ref="tab">
             <el-tab-pane label="Category" name="category">
-
             </el-tab-pane>
-            <el-tab-pane label="Theme" name="theme" :disabled="theme_disabled"></el-tab-pane>
-            <el-tab-pane label="Hosting" name="hosting" :disabled="hosting_disabled"></el-tab-pane>
-
+            <el-tab-pane label="Theme" name="theme" :disabled="theme_disabled">
+            </el-tab-pane>
+            <el-tab-pane label="Hosting" name="hosting" :disabled="hosting_disabled">
+            </el-tab-pane>
+            <keep-alive>
+              <component :is="component" :categories="categories" :themeSelected="themeSelected"></component>
+            </keep-alive>
+            <div class="spacer">&nbsp;</div>
           </el-tabs>
-
-        <div class="spacer">&nbsp;</div>
         </div>
-        <keep-alive>
-        <component :is="component" :categories="categories" :themeSelected="themeSelected"></component>
-      </keep-alive>
+
       </el-col>
     </el-row>
     <div class="spacer">&nbsp;</div>
@@ -45,12 +45,6 @@
       box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
       padding: 5px;
       overflow-y:hidden ;
-  }
-  .el-button{
-  padding:-30px;
-  margin-bottom:50px;
-  background-color: rgba(255,255,255,0);
-  border-color: rgba(255,255,255,0);
   }
   .el-tabs{
     margin-left:30px;
@@ -100,16 +94,14 @@
 import Choose from '../components/Choose.vue'
 import Theme from '../components/Theme.vue'
 import Hosting from '../components/Hosting.vue'
-import Launchserver from '../components/Launchserver.vue'
 
 import { bus } from '../main.js'
-
 export default {
   data () {
     return {
       activeTab: '',
       currentDate: new Date(),
-      component : 'choose',
+      component: 'choose',
       themeSelected: '',
       theme_disabled: true,
       hosting_disabled: true,
@@ -132,14 +124,32 @@ export default {
         {
           Name: 'Photography'
         }
+      ],
+      themes: [
+        {
+          Name: 'Photography 1'
+        },
+        {
+          Name: 'Photography 2'
+        },
+        {
+          Name: 'Photography 3'
+        },
+        {
+          Name: 'Photography 4'
+        },
+        {
+          Name: 'Photography 5'
+        },
+        {
+          Name: 'Photography 6'
+        }
       ]
     }
   },
-  components: {
-    'launchserver': Launchserver
-  },
   methods: {
     handleClick (tab, event) {
+      bus.$emit('tab-click',tab,event)
       switch (this.activeTab) {
         case 'category':
           this.component = 'choose'
@@ -148,10 +158,10 @@ export default {
           break
         case 'theme':
           this.component = 'theme'
-          break;
+          break
         case 'hosting':
           this.component = 'hosting'
-          break;
+          break
         default:
       }
     }
@@ -161,10 +171,12 @@ export default {
     'theme': Theme,
     'hosting': Hosting
   },
-  created(){
+  created () {
     bus.$on('chooseTheme', (data) => {
       this.themeSelected = data
       this.theme_disabled = false
+      this.component = 'theme'
+      this.$refs.tab.setCurrentName('theme')
     })
   }
 }

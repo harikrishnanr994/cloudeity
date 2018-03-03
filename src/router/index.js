@@ -17,6 +17,5 @@ export default [
   { path: '/Launchserver',
     component: Launchserver},
   { path: '/paid',
-    component: Paid
-  }
+    component: Paid}
 ]
