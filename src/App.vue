@@ -12,7 +12,6 @@
           <router-view></router-view>
         </el-main>
       </el-container>
-      <el-footer class="footer"><h5>Cloudeity</h5></el-footer>
     </el-container>
   </div>
 </template>

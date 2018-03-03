@@ -149,11 +149,10 @@ export default {
       }
     },
     loadCategories () {
-      const url = "http://139.59.46.77:8080/restapi/categories"
+      const url = 'http://139.59.46.77:8080/restapi/categories'
       axios.get(url).then(response => {
-           this.categories = response.data
-         })
-
+        this.categories = response.data
+      })
     }
   },
   components: {
@@ -169,7 +168,7 @@ export default {
       this.$refs.tab.setCurrentName('theme')
     })
   },
-  mounted() {
+  mounted () {
     this.loadCategories()
   }
 }
