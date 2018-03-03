@@ -1,11 +1,11 @@
 <template>
   <el-row>
-    <el-col :xs="20" :sm="20" :md="12" :lg="8" :xl="6" v-for="category in categories" :key="category['Name']" >
-    <el-button v-on:click="chooseTheme(category.Name)" type="primary" plain >
+    <el-col :xs="20" :sm="20" :md="12" :lg="8" :xl="6" v-for="category in categories" :key="category['Category']" >
+    <el-button v-on:click="chooseTheme(category.Category)" type="primary" plain >
       <el-card :body-style="{ padding: '0px' }">
         <img src="@/assets/hamburger.png" class="image">
         <div style="padding: 14px;">
-          <span>{{category.Name}}</span>
+          <span>{{category.Category}}</span>
         </div>
       </el-card>
       </el-button>

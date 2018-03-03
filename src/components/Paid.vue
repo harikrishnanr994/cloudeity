@@ -96,6 +96,7 @@ import Theme from '../components/Theme.vue'
 import Hosting from '../components/Hosting.vue'
 
 import { bus } from '../main.js'
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -106,24 +107,6 @@ export default {
       theme_disabled: true,
       hosting_disabled: true,
       categories: [
-        {
-          Name: 'Product Showcase'
-        },
-        {
-          Name: 'E-Commerce'
-        },
-        {
-          Name: 'Job Oriented'
-        },
-        {
-          Name: 'Company Profile'
-        },
-        {
-          Name: 'Construction'
-        },
-        {
-          Name: 'Photography'
-        }
       ],
       themes: [
         {
@@ -164,6 +147,13 @@ export default {
           break
         default:
       }
+    },
+    loadCategories () {
+      const url = "http://139.59.46.77:8080/restapi/categories"
+      axios.get(url).then(response => {
+           this.categories = response.data
+         })
+
     }
   },
   components: {
@@ -178,6 +168,9 @@ export default {
       this.component = 'theme'
       this.$refs.tab.setCurrentName('theme')
     })
+  },
+  mounted() {
+    this.loadCategories()
   }
 }
 </script>
