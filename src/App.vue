@@ -73,6 +73,14 @@ footer {
   text-align: center;
   vertical-align: middle;
 }
+.spacer {
+  height: 20px;
+ }
+ .center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
 aside{
   z-index:20;
   max-width:100px;
