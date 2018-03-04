@@ -1,11 +1,12 @@
 <template>
   <el-row>
-    <el-col :xs="20" :sm="20" :md="12" :lg="8" :xl="6" v-for="category in categories" :key="category['Category']" >
-    <el-button v-on:click="chooseTheme(category.Category)" type="primary" plain class="white" >
+    <el-col :xs="20" :sm="20" :md="12" :lg="8" :xl="6" v-for="category in categories" :key="category['category_name']" >
+    <el-button v-on:click="chooseTheme(category.category_name)" type="primary" plain class="white" >
       <el-card :body-style="{ padding: '0px' }">
-        <img src="@/assets/hamburger.png" class="image">
+        <!--<img :src="category.image_url | appendAssetDirectory" class="image">-->
+        <img :src="category.image_url | appendAssetDirectory" class="image">
         <div style="padding: 14px;">
-          <span>{{category.Category}}</span>
+          <span>{{category.category_name}}</span>
         </div>
       </el-card>
       </el-button>
@@ -33,6 +34,13 @@ export default{
   methods: {
     chooseTheme (name) {
       bus.$emit('chooseTheme', name)
+    }
+  },
+  filters: {
+  appendAssetDirectory (value) {
+    if (!value) return ''
+    value = value.toString()
+    return require('@/assets/category_images/' + value)
     }
   }
 }
