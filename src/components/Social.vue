@@ -5,16 +5,16 @@
      <div class="spacer">&nbsp;</div>
      <div class="spacer">&nbsp;</div>
      <h2>Connect your Social Accounts</h2>
-     <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
+     <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
       <button type="info" class="social github" > <icon class="icon" name="github" scale="2"></icon><span> <p>Connect GitHub</p></span></button>
       </el-col>
-      <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
+      <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
         <button type="primary" class="social facebook" > <icon class="icon" name="facebook" scale="2"></icon><span> <p>Connect Facebook</p></span></button>
        </el-col>
-       <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
+       <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
          <button type="primary" class="social google" > <icon class="icon" name="google" scale="2"></icon><span> <p>Connect Google</p></span></button>
         </el-col>
-        <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
           <button type="primary" class="social twitter" > <icon class="icon" name="twitter" scale="2"></icon><span> <p>Connect Twitter</p></span></button>
         </el-col>
      </el-col>
@@ -94,9 +94,9 @@ right: 50px;
     overflow-y:hidden ;
 }
 .social{
-  width:230px;
+  width:200px;
   color: #fff;
-  height: 60px;
+  height: 50px;
   margin: 10px;
   border-radius: 4px;
 
@@ -130,4 +130,9 @@ h2{
   margin: 10px;
   margin-left: 20px;
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
 </style>
