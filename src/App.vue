@@ -6,7 +6,7 @@
       </el-header>
       <el-container>
         <el-aside>
-          <navmenu v-bind:isCollapse="isCollapse" ></navmenu>
+          <navmenu v-show="mobileViewInPortrait" v-bind:isCollapse="isCollapse" ></navmenu>
         </el-aside>
         <el-main>
           <router-view></router-view>
@@ -24,12 +24,31 @@ export default {
   name: 'app',
   data () {
     return {
-      isCollapse: true }
+      isCollapse: true,
+      mobileViewInPortrait: true
+    }
   },
   components: {
     'navmenu': NavMenu,
     'vheader': Header,
     'vfooter': Footer
+  },
+  created () {
+    console.log(window.innerWidth)
+    if(window.innerWidth<500)
+      this.mobileViewInPortrait = false
+  },
+  mounted() {
+    this.$nextTick(function() {
+      window.addEventListener('resize', function(e) {
+        console.log('Resize ' + window.innerWidth)
+        if(window.innerWidth<500)
+          this.mobileViewInPortrait = false
+        else
+          this.mobileViewInPortrait = true
+        console.log('MOBILEVIEW ' + this.mobileViewInPortrait)
+      });
+    })
   }
 }
 
