@@ -14,9 +14,6 @@
   </div>
 </template>
 <style scoped>
-  .el-row{
-  margin-right:10px;
-  }
   .el-col {
     border-radius: 4px;
     font-family:Roboto;

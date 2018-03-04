@@ -35,19 +35,21 @@ export default {
   },
   created () {
     console.log(window.innerWidth)
-    if(window.innerWidth<500)
+    if (window.innerWidth < 500) {
       this.mobileViewInPortrait = false
+    }
   },
-  mounted() {
-    this.$nextTick(function() {
-      window.addEventListener('resize', function(e) {
+  mounted () {
+    this.$nextTick(function () {
+      window.addEventListener('resize', function (e) {
         console.log('Resize ' + window.innerWidth)
-        if(window.innerWidth<500)
+        if (window.innerWidth < 500) {
           this.mobileViewInPortrait = false
-        else
+        } else {
           this.mobileViewInPortrait = true
+        }
         console.log('MOBILEVIEW ' + this.mobileViewInPortrait)
-      });
+      })
     })
   }
 }

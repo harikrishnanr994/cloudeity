@@ -7,12 +7,12 @@
      <el-row>
      <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
        <el-row>
-         <el-col :xs="24" :sm="24" :md="12" :lg="4" :xl="4">
+         <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
            <div class="image-cropper1">
              <img src="@/assets/hamburger.png">
            </div>
          </el-col>
-         <el-col :xs="24" :sm="24" :md="12" :lg="20" :xl="20">
+         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <div>
            <div class="profiledetails1"> Harikrishnan R</div>
            <div class="email">harikrishnanr994@gmail.com</div>
@@ -39,7 +39,7 @@
     width: 150px;
     height: auto;
     overflow: hidden;
-    margin-left:80px;
+    margin-left:100px;
     margin-bottom: 20px;
 }
 .image-cropper1 img{
@@ -59,14 +59,14 @@ font-family:Roboto;
 font-size:28px;
 font-weight:400;
 color:black;
-margin-left: 80px;
+margin-left: 40px;
 }
 .email{
 font-family:Roboto;
 font-weight:100;
 font-size:16px;
 margin-top:25px;
-margin-left: 80px;
+margin-left: 40px;
 color:grey;
 }
 .email1{
@@ -74,7 +74,7 @@ font-family:Roboto;
 font-weight:100;
 font-size:16px;
 margin-top:10px;
-margin-left: 80px;
+margin-left: 40px;
 color:grey;
 }
 .grid-content {
@@ -94,7 +94,7 @@ color:grey;
   justify-content: center;
  }
  .editprofile{
-   margin-left: 100px;
+   margin-left: 80px;
    margin-top: 20px;
  }
 </style>

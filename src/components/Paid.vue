@@ -47,8 +47,8 @@
       overflow-y:hidden ;
   }
   .el-tabs{
-    margin-left:30px;
-    margin-right:30px;
+    margin-left:10px;
+    margin-right:10px;
   }
   .title{
     margin-left: 10px;
