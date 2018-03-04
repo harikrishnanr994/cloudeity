@@ -5,7 +5,6 @@
    <el-row>
      <el-col :span="24" >
        <div class="grid-content">
-        <h2 class="h2">Settings</h2>
             <profile></profile>
             <social></social>
        </div>

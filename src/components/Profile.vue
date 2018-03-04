@@ -1,48 +1,47 @@
 <template>
+<el-row>
 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
    <div class="grid-content">
-     <el-col :span="20">
      <div class="spacer">&nbsp;</div>
      <div class="spacer">&nbsp;</div>
-     <div class="profilelink1">
-       <div class="image-cropper1">
-         <img src="@/assets/hamburger.png">
-       </div>
-       <div class="profiledetails1"> Harikrishnan R
-         <p class="email">harikrishnanr994@gmail.com</p>
-         <p class="email1">Member since 1/2/2018</p>
-       </div>
-     </div>
-      <el-button type="info" class="profile" plain>Edit Profile</el-button>
-     <div class="spacer">&nbsp;</div>
-     <div class="spacer">&nbsp;</div>
-     <div class="spacer">&nbsp;</div>
-     <div class="spacer">&nbsp;</div>
+     <el-row>
+     <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
+       <el-row>
+         <el-col :xs="24" :sm="24" :md="12" :lg="4" :xl="4">
+           <div class="image-cropper1">
+             <img src="@/assets/hamburger.png">
+           </div>
+         </el-col>
+         <el-col :xs="24" :sm="24" :md="12" :lg="20" :xl="20">
+          <div>
+           <div class="profiledetails1"> Harikrishnan R</div>
+           <div class="email">harikrishnanr994@gmail.com</div>
+           <div class="email1">Member since 1/2/2018</div>
+         </div>
+        </el-col>
+     </el-row>
      </el-col>
+     <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
+      <el-button type="info" class="editprofile" plain>Edit Profile</el-button>
+    </el-col>
+  </el-row>
+     <div class="spacer">&nbsp;</div>
+     <div class="spacer">&nbsp;</div>
  </div>
  </el-col>
+</el-row>
 </template>
 
 <style scoped>
 
-.profiledetails1{
-text-align:left;
-font-family:Roboto;
-font-size:28px;
-margin-left:150px !important;
-font-weight:400;
-color:black;
-}
 .image-cropper1 {
     max-width: 150px;
+    width: 150px;
     height: auto;
-    position: absolute;
     overflow: hidden;
-    float:left;
-    margin-left:30px;
-
+    margin-left:80px;
+    margin-bottom: 20px;
 }
-
 .image-cropper1 img{
     display: block;
     height: auto;
@@ -53,20 +52,21 @@ color:black;
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-.profilelink1{
-height:55px;
-margin-top:-10px;
-margin-bottom:-10px;
-margin-left:-20px !important;
+
+.profiledetails1{
+text-align:left;
 font-family:Roboto;
-font-weight:200;
 font-size:28px;
+font-weight:400;
+color:black;
+margin-left: 80px;
 }
 .email{
 font-family:Roboto;
 font-weight:100;
 font-size:16px;
 margin-top:25px;
+margin-left: 80px;
 color:grey;
 }
 .email1{
@@ -74,14 +74,8 @@ font-family:Roboto;
 font-weight:100;
 font-size:16px;
 margin-top:10px;
+margin-left: 80px;
 color:grey;
-}
-.profile{
-display: flex;
-align-items: right;
-justify-content: center;
-position: absolute;
-right: 50px;
 }
 .grid-content {
   border-radius: 4px;
@@ -94,4 +88,13 @@ right: 50px;
     padding: 5px;
     overflow-y:hidden ;
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .editprofile{
+   margin-left: 100px;
+   margin-top: 20px;
+ }
 </style>
