@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac noscroll">
   <el-col :span="24">
-  <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed"  :router="router_var">
+  <el-menu :default-active="defaultActive" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="collapsed"  :router="router_var">
   <router-link to="/dashboard" exact>
     <el-menu-item index="1">
     <i class="el-icon-menu"></i>
@@ -106,6 +106,10 @@ export default {
     let path = this.$route.path.substr(1).toLowerCase()
     console.log(path)
     switch (path) {
+      case '/':
+        this.defaultActive = '1'
+        this.$router.push('dashboard')
+        break
       case 'dashboard':
         this.defaultActive = '1'
         break
@@ -125,6 +129,7 @@ export default {
         this.defaultActive = '6'
         break
     }
+    this.$router.push(path)
     bus.$on('toggleDrawer', data => {
       console.log(data)
       this.collapsed = data

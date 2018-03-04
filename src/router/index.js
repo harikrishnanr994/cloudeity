@@ -6,6 +6,8 @@ import Launchserver from '../components/Launchserver.vue'
 import Paid from '../components/Paid.vue'
 
 export default [
+  { path: '/',
+    redirect: '/dashboard'},
   { path: '/dashboard',
     component: Dashboard},
   { path: '/settings',

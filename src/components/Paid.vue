@@ -136,7 +136,6 @@ export default {
       switch (this.activeTab) {
         case 'category':
           this.component = 'choose'
-          this.theme_disabled = true
           this.hosting_disabled = true
           break
         case 'theme':
