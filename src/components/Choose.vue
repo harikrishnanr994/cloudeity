@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :xs="20" :sm="20" :md="12" :lg="8" :xl="6" v-for="category in categories" :key="category['Category']" >
-    <el-button v-on:click="chooseTheme(category.Category)" type="primary" plain >
+    <el-button v-on:click="chooseTheme(category.Category)" type="primary" plain class="white" >
       <el-card :body-style="{ padding: '0px' }">
         <img src="@/assets/hamburger.png" class="image">
         <div style="padding: 14px;">
@@ -14,10 +14,15 @@
 </template>
 <style scoped>
 
-.el-button{
+.white{
 margin-bottom:50px;
 background-color: rgba(255,255,255,0);
 border-color: rgba(255,255,255,0);
+}
+.blue{
+margin-bottom:50px;
+background-color: #409EFF;
+border-color: #409EFF;
 }
 </style>
 
