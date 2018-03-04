@@ -5,8 +5,8 @@
         <vheader v-bind:isCollapse="isCollapse"/>
       </el-header>
       <el-container>
-        <el-aside>
-          <navmenu v-show="mobileViewInPortrait" v-bind:isCollapse="isCollapse" ></navmenu>
+        <el-aside v-if="mobileViewInPortrait">
+          <navmenu v-bind:isCollapse="isCollapse" ></navmenu>
         </el-aside>
         <el-main>
           <router-view></router-view>
