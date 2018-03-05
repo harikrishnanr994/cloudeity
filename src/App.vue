@@ -103,7 +103,7 @@ footer {
   }
 aside{
   z-index:20;
-  max-width:100px;
+  max-width:60px;
 }
 
 h1,h2,h3,h4,p,span{

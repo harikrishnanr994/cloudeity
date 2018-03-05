@@ -18,8 +18,8 @@
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item  class="profilelink"><div class="image-cropper"><img src="@/assets/hamburger.png"></div><div class="profiledetails"> Harikrishnan R <p class="email">harikrishnanr994@gmail.com </p></div> </el-dropdown-item>
           <hr>
-          <el-dropdown-item><p class="list">Settings</p></el-dropdown-item>
-          <el-dropdown-item><p class="list">Notifications</p></el-dropdown-item>
+          <el-dropdown-item><p class="list">Settings </p></el-dropdown-item>
+          <el-dropdown-item><p class="list">Notifications <el-badge class="mark" :value="12" /> </p></el-dropdown-item>
           <el-dropdown-item><p class="list">Billing</p></el-dropdown-item>
           <el-dropdown-item><p class="list">Logout</p></el-dropdown-item>
         </el-dropdown-menu>
