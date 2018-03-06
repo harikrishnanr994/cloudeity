@@ -6,19 +6,42 @@
    <div class="grid-content">
      <h2>Ticket Details</h2>
      <div class="spacer">&nbsp;</div>
-     <div class="spacer">&nbsp;</div>
-       <div class="grid-content">
+       <div class="grid-content1">
          <h3 class="tokendetails">Token#: 4846 | Date: 04-02-2018</h3><hr>
          <h3 class="tokenheading">What is Lorem Ipsum?</h3>
          <h5 class="tokensubmit">Submitted By: client</h5>
-         <p class="tokendescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <p>
-         <div class="spacer">&nbsp;</div>
-         <div class="spacer">&nbsp;</div>
+         <p class="tokendescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
      </div>
+     <div class="spacer">&nbsp;</div>
+     <div class="grid-content1">
+       <div class="tokendetails"><span class="image-cropper"><img src="@/assets/hamburger.png"></span><div class="profiledetails"><el-button
+         size="mini" type="danger" class="rightcorner"><i class="el-icon-delete"></i></el-button><h3 class="name">Harikrishnan R | <span class="date"> Date: 28-02-2018 <span  class="time">@ 22:33</span></span></h3></div></div>
+         <hr>
+       <p class="tokenreply">This is good. thanks </p>
+   </div>
+   <div class="spacer">&nbsp;</div>
+   <div class="grid-content1">
+     <div class="tokendetails"><span class="image-cropper"><img src="@/assets/hamburger.png"></span><div class="profiledetails"><h3 class="name">Admin | <span class="date"> Date: 03-03-2018 <span  class="time">@ 12:33</span></span></h3></div></div>
+       <hr>
+     <p class="tokenreply">You are welcome.</p>
+ </div>
+  <div class="spacer">&nbsp;</div>
+   <div class="spacer">&nbsp;</div>
+ <hr class="fullsize">
+   <el-form ref="form" :model="form" label-width="120px">
+     <h3 class="name">Reply This Ticket </h3>
+     <el-form-item>
+       <el-input type="textarea" v-model="form.desc"></el-input>
+     </el-form-item>
+     <el-form-item>
+       <el-button type="primary" @click="onSubmit">Create</el-button>
+       <el-button>Cancel</el-button>
+     </el-form-item>
+   </el-form>
  </div>
  </el-col>
  <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-  <div class="grid-content1">
+  <div class="grid-content2">
     <div class="spacer">&nbsp;</div>
     <div class="titlebg"><h3 class="title1">Ticket Information</h3></div>
     <ul>
@@ -30,7 +53,7 @@
     </ul>
   </div>
   <br>
-  <div class="grid-content1">
+  <div class="grid-content2">
     <div class="spacer">&nbsp;</div>
     <div class="titlebg"><h3 class="title1">Files</h3></div>
     <ul>
@@ -48,15 +71,32 @@
   border-radius: 4px;
   min-height: 36px;
   margin: 10px;
+  margin-left: 5px;
+  margin-right: -5px;
   background-color: #fff;
     -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
     padding: 30px;
+    margin-right: 20px;
     overflow-y:hidden ;
     font-family: Roboto;
 }
 .grid-content1 {
+  border-radius: 4px;
+  min-height: 36px;
+  margin-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 10px;
+  background-color: #fff;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    overflow-y:hidden ;
+    font-family: Roboto;
+}
+.grid-content2 {
   border-radius: 4px;
   min-height: 36px;
   margin-top: 10px;
@@ -98,6 +138,13 @@
     text-align: center;
     position: relative;
     margin-right: 10px;
+}
+.rightcorner {
+   float: right;
+   text-align: center;
+   position: relative;
+   margin-right: 5px;
+   margin-top:-10px;
 }
 ul{
   list-style: none;
@@ -177,11 +224,74 @@ h4{
   font-size: 15px;
   margin-top: -10px;
 }
+.profiledetails{
+text-align:left;
+margin-left:40px;
+font-family:Roboto;
+font-size:15px;
+font-weight:400;
+color:black;
+}
+.image-cropper {
+    max-width: 70px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    left:25px;
+    margin-top:-10px;
+    overflow: hidden;
+    float:left;
+}
+
+.image-cropper img{
+    display: block;
+    height: auto;
+    width: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.date{
+text-align:left;
+margin-left:5px;
+font-family:Roboto;
+font-size:15px;
+font-weight:400;
+color:orange;
+}
+.name{
+  font-weight:500;
+}
+.time{
+  color:red;
+}
+.tokenreply{
+  .tokendescription{
+    color: #000;
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
+.fullsize{
+  margin-left: -30px;
+  margin-right: -30px;
+  color: rgba(128,128,128,0.1);
+}
+.el-form-item{
+  margin-left: -120px;
+}
 </style>
 <script>
 export default {
   data () {
     return {
+      form: {
+        desc: ''
+      }
     }
   },
   methods: {
