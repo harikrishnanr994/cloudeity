@@ -38,6 +38,12 @@
   <span slot="title">Paid Website</span>
 </el-menu-item>
 </router-link>
+<router-link to="/messagedetails" exact>
+  <el-menu-item index="7">
+  <i class="el-icon-plus"></i>
+  <span slot="title">Message Details</span>
+</el-menu-item>
+</router-link>
 </el-menu>
 
   </el-col>
@@ -128,6 +134,9 @@ export default {
       case 'paid':
         this.defaultActive = '6'
         break
+      case 'messagedetails':
+        this.defaultActive = '7'
+        break
     }
     this.$router.push(path)
     bus.$on('toggleDrawer', data => {
@@ -160,6 +169,9 @@ export default {
         break
       case 'paid':
         this.defaultActive = '6'
+        break
+      case 'messagedetails':
+        this.defaultActive = '7'
         break
     }
   }

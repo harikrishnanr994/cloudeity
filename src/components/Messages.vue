@@ -81,10 +81,10 @@
     <div class="spacer">&nbsp;</div>
     <div class="titlebg"><h2 class="title1">Show By Status</h2></div>
     <ul>
-      <li class="list"><a href="#" class="open">Open Tickets <span class="right"> <el-badge class="mark " :value="3" /> </span></a></li><hr>
-      <li class="list"><a href="#" class="closed"> Closed Tickets <span class="right"> <el-badge class="mark" :value="12"/> </span> </a></li><hr>
-      <li  class="list"><a href="#" class="replied"> Replied Tickets <span class="right"> <el-badge class="mark" :value="1"/>  </span></a></li><hr>
-      <li  class="list"><a href="#" class="pending">Pending Tickets <span class="right"> <el-badge class="mark" :value="5"/> </span> </a></li><hr>
+      <li class="list"><a href="#" class="open">Open Tickets <span class="right"> <el-badge class="mark " :value="3" /> </span></a></li>
+      <li class="list"><a href="#" class="closed"> Closed Tickets <span class="right"> <el-badge class="mark" :value="12"/> </span> </a></li>
+      <li  class="list"><a href="#" class="replied"> Replied Tickets <span class="right"> <el-badge class="mark" :value="1"/>  </span></a></li>
+      <li  class="list"><a href="#" class="pending">Pending Tickets <span class="right"> <el-badge class="mark" :value="5"/> </span> </a></li>
       <li  class="list"><a href="#" class="all">View All<span class="right"> <el-badge class="mark" :value="21"/> </span> </a></li>
     </ul>
   </div>
@@ -166,26 +166,30 @@ ul{
   margin-left: -40px;
 }
 li{
-  margin-left: 30px;
+  border-bottom: 1px solid rgba(128,128,128,0.2);
 }
 a{
 text-decoration:none;
-border-bottom: #f0f0f0;
 }
 .open{
   color: #f56c6c;
+  margin-left: 30px;
 }
 .closed{
   color:#67c23a;
+  margin-left: 30px;
 }
 .replied{
   color: #409EFF;
+  margin-left: 30px;
 }
 .pending{
   color: #e6a23c;
+  margin-left: 30px;
 }
 .all{
   color: #909399;
+  margin-left: 30px;
 }
 </style>
 <script>
