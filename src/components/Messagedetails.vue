@@ -33,6 +33,23 @@
      <el-form-item>
        <el-input type="textarea" v-model="form.desc"></el-input>
      </el-form-item>
+     <p>upload screenshot</p>
+     <el-form-item>
+       <el-upload
+         class="upload-demo"
+         action="#"
+         :on-preview="handlePreview"
+         :on-remove="handleRemove"
+         :before-remove="beforeRemove"
+         multiple
+         :limit="3"
+         :on-exceed="handleExceed"
+         :file-list="fileList"
+         list-type="picture">
+         <el-button size="small" type="primary">Click to upload</el-button>
+         <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
+       </el-upload>
+     </el-form-item>
      <el-form-item>
        <el-button type="primary" @click="onSubmit">Create</el-button>
        <el-button>Cancel</el-button>
@@ -291,7 +308,8 @@ export default {
     return {
       form: {
         desc: ''
-      }
+      },
+      fileList: [ { name: 'logo.png', url: require('@/assets/logo.png') }, { name: 's01.png', url: require('@/assets/s01.png') } ]
     }
   },
   methods: {
@@ -309,6 +327,18 @@ export default {
         default:
       }
       return tagcolor
+    },
+    handleRemove (file, fileList) {
+      console.log(file, fileList)
+    },
+    handlePreview (file) {
+      console.log(file)
+    },
+    handleExceed (files, fileList) {
+      this.$message.warning(`The limit is 3, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`)
+    },
+    beforeRemove (file, fileList) {
+      return this.$confirm(`Delete ${file.name}？`)
     }
   }
 }
