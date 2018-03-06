@@ -5,8 +5,9 @@
       <el-card :body-style="{ padding: '0px' }">
         <!--<img :src="category.image_url | appendAssetDirectory" class="image">-->
         <img :src="category.image_url | appendAssetDirectory" class="image">
+        <hr>
         <div style="padding: 14px;">
-          <span>{{category.category_name}}</span>
+          <span class="category_name">{{category.category_name}}</span>
         </div>
       </el-card>
       </el-button>
@@ -24,6 +25,11 @@ border-color: rgba(255,255,255,0);
 margin-bottom:50px;
 background-color: #409EFF;
 border-color: #409EFF;
+}
+.category_name{
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 400;
 }
 </style>
 

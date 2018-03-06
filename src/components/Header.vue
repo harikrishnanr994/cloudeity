@@ -18,7 +18,7 @@
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item  class="profilelink"><div class="image-cropper"><img src="@/assets/hamburger.png"></div><div class="profiledetails"> Harikrishnan R <p class="email">harikrishnanr994@gmail.com </p></div> </el-dropdown-item>
           <hr>
-          <el-dropdown-item><p class="list">Settings </p></el-dropdown-item>
+          <el-dropdown-item><a href="#" class="list">Settings </a></el-dropdown-item>
           <el-dropdown-item><p class="list">Notifications <el-badge class="mark" :value="12" /> </p></el-dropdown-item>
           <el-dropdown-item><p class="list">Billing</p></el-dropdown-item>
           <el-dropdown-item><p class="list">Logout</p></el-dropdown-item>
@@ -120,14 +120,14 @@ color:grey;
 width:250px;
 }
 a:link, a:visited {
-    background-color: #fff;
-    color: black;
+    color: #000;
     text-align: center;
     text-decoration: none;
+    font-family: Roboto;
+    font-weight: 200;
 }
 a:hover, a:active {
-    background-color:#fff;
-    color: #000;
+  color: #409EFF;
 }
 
 .row-bg {

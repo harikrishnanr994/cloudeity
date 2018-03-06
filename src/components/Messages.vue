@@ -1,5 +1,4 @@
 <template>
-
 <el-row>
   <div class="spacer">&nbsp;</div>
   <div class="spacer">&nbsp;</div>
@@ -63,6 +62,9 @@
          <template slot-scope="scope">
            <el-button
              size="mini"
+             @click="handleView(scope.$index, scope.row)" plain><i class="el-icon-view"></i></el-button>
+           <el-button
+             size="mini"
              @click="handleEdit(scope.$index, scope.row)"><i class="el-icon-edit"></i></el-button>
            <el-button
              size="mini"
@@ -72,13 +74,29 @@
        </el-table-column>
      </el-table>
      <div class="spacer">&nbsp;</div>
-
  </div>
  </el-col>
  <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
   <div class="grid-content1">
     <div class="spacer">&nbsp;</div>
-    <div class="titlebg"><h2 class="title1">Search By Status</h2></div>
+    <div class="titlebg"><h2 class="title1">Show By Status</h2></div>
+    <ul>
+      <li class="list"><a href="#" class="open">Open Tickets <span class="right"> <el-badge class="mark " :value="3" /> </span></a></li><hr>
+      <li class="list"><a href="#" class="closed"> Closed Tickets <span class="right"> <el-badge class="mark" :value="12"/> </span> </a></li><hr>
+      <li  class="list"><a href="#" class="replied"> Replied Tickets <span class="right"> <el-badge class="mark" :value="1"/>  </span></a></li><hr>
+      <li  class="list"><a href="#" class="pending">Pending Tickets <span class="right"> <el-badge class="mark" :value="5"/> </span> </a></li><hr>
+      <li  class="list"><a href="#" class="all">View All<span class="right"> <el-badge class="mark" :value="21"/> </span> </a></li>
+    </ul>
+  </div>
+  <br>
+  <div class="grid-content1">
+    <div class="spacer">&nbsp;</div>
+    <div class="titlebg"><h2 class="title1">Show By Department</h2></div>
+    <ul>
+      <li class="list"><a href="#" class="open">Department N1 <span class="right"> <el-badge class="mark " :value="3" /> </span></a></li>
+      <li class="list"><a href="#" class="closed"> Department N2 <span class="right"> <el-badge class="mark" :value="12"/> </span> </a></li>
+      <li  class="list"><a href="#" class="replied"> Department N3 <span class="right"> <el-badge class="mark" :value="1"/>  </span></a></li>
+    </ul>
   </div>
 </el-col>
 </el-row>
@@ -100,7 +118,7 @@
 .grid-content1 {
   border-radius: 4px;
   min-height: 36px;
-  margin: 10px;
+  margin-top: 10px;
   background-color: #fff;
     -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
@@ -125,10 +143,51 @@
    font-weight: 400;
    margin: 10px;
    margin-top: 20px;
+   text-align: center;
    padding: 10px;
  }
-</style>
+ .list{
+ margin-top:8px;
+ height:40px;
+ margin-bottom:3px;
+ }
 
+ .right {
+    float: right;
+    text-align: center;
+    position: relative;
+    margin-right: 10px;
+}
+ul{
+  list-style: none;
+  list-style-position: inside;
+}
+ul{
+  margin-left: -40px;
+}
+li{
+  margin-left: 30px;
+}
+a{
+text-decoration:none;
+border-bottom: #f0f0f0;
+}
+.open{
+  color: #f56c6c;
+}
+.closed{
+  color:#67c23a;
+}
+.replied{
+  color: #409EFF;
+}
+.pending{
+  color: #e6a23c;
+}
+.all{
+  color: #909399;
+}
+</style>
 <script>
 export default {
   data () {
@@ -175,7 +234,7 @@ export default {
           break
         case 'Closed' : tagcolor = 'success'
           break
-        case 'Replied' : tagcolor = 'info'
+        case 'Replied' : tagcolor = 'primary'
           break
         case 'Open' : tagcolor = 'danger'
           break
