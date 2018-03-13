@@ -96,7 +96,7 @@
     box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
     padding: 30px;
     margin-right: 20px;
-    overflow-y:hidden ;
+    overflow-y:scroll ;
     font-family: Roboto;
 }
 .grid-content1 {
