@@ -7,6 +7,11 @@ import App from './App'
 import Routes from './router/index.js'
 import VueRouter from 'vue-router'
 import locale from 'element-ui/lib/locale/lang/en'
+import VueProgressiveImage from 'vue-progressive-image'
+
+Vue.use(VueProgressiveImage, {
+  placeholder: '@/assets/logo.png'
+})
 
 //  Vue.config.productionTip = false
 
