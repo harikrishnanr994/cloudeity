@@ -49,7 +49,7 @@
     <el-form-item label="upload screenshot">
       <el-upload
         class="upload-demo"
-        action="http://localhost:8000/restapi/imageUpload"
+        :action="'http://' + myhostname + ':8000/restapi/imageUpload'"
         name="screenshot"
         :limit="1"
         :on-preview="handlePreview"
@@ -154,7 +154,8 @@ export default {
         desc: ''
       },
       csrf_token: '',
-      filename: ''
+      filename: '',
+      myhostname: location.hostname,
     }
   },
   methods: {
@@ -178,7 +179,7 @@ export default {
     },
     onSubmit () {
       if (this.allFieldsEntered()) {
-        const url = 'http://localhost:8000/restapi/uploadFeedback'
+        const url = 'http://' +  this.myhostname + ':8000/restapi/uploadFeedback'
         var params = new URLSearchParams()
         params.append('name', this.form.name)
         params.append('feedback_type', this.form.type)
@@ -194,7 +195,7 @@ export default {
     },
     handleRemove (file, fileList) {
       if(this.filename!=''){
-        const url = 'http://localhost:8000/restapi/deleteFile'
+        const url = 'http://' + this.myhostname + ':8000/restapi/deleteFile'
         var params = new URLSearchParams()
         params.append('filename', this.filename)
         axios.post(url, params).then(response => {
@@ -220,7 +221,7 @@ export default {
       }
     },
     get_csrf_token () {
-      const url = 'http://localhost:8000/restapi/get-token'
+      const url = 'http://' +  this.myhostname + ':8000/restapi/get-token'
       axios.get(url).then(response => {
         this.csrf_token = response.data.token
       })
