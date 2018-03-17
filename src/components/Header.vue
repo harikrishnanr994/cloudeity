@@ -18,10 +18,10 @@
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item  class="profilelink"><div class="image-cropper"><img src="@/assets/hamburger.png"></div><div class="profiledetails"> Harikrishnan R <p class="email">harikrishnanr994@gmail.com </p></div> </el-dropdown-item>
           <hr>
-          <el-dropdown-item><a href="#" class="list">Settings </a></el-dropdown-item>
-          <el-dropdown-item><p class="list">Notifications <el-badge class="mark" :value="12" /> </p></el-dropdown-item>
-          <el-dropdown-item><p class="list">Billing</p></el-dropdown-item>
-          <el-dropdown-item><p class="list">Logout</p></el-dropdown-item>
+          <router-link to="/Settings" exact><el-dropdown-item><p class="list">Settings </p></el-dropdown-item></router-link>
+          <router-link to="/Messages" exact><el-dropdown-item><p class="list">Messages <el-badge class="mark" :value="12" /> </p></el-dropdown-item></router-link>
+          <router-link to="/Settings" exact><el-dropdown-item><p class="list">Billing</p></el-dropdown-item></router-link>
+          <router-link to="/Logout" exact><el-dropdown-item><p class="list">Logout</p></el-dropdown-item></router-link>
         </el-dropdown-menu>
       </el-dropdown>
     </el-col>
@@ -61,6 +61,7 @@ margin-right:-10px;
 .list{
 margin-top:-8px;
 height:40px;
+text-align: left;
 margin-bottom:3px;
 }
 .image-cropper {
@@ -118,6 +119,7 @@ color:grey;
 }
 .el-dropdown-menu{
 width:250px;
+text-align: left;
 }
 a:link, a:visited {
     color: #000;

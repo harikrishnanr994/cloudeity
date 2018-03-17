@@ -16,6 +16,16 @@
 </template>
 <style scoped>
 
+.grid-content1 {
+  border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.37);
+    overflow-y:hidden ;
+    margin: 40px;
+    padding: 30px;
+}
+
 .white{
 margin-bottom:50px;
 background-color: rgba(255,255,255,0);
