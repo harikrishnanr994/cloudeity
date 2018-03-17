@@ -49,14 +49,14 @@
     <el-form-item label="upload screenshot">
       <el-upload
         class="upload-demo"
-        action="#"
+        :action="'http://' + myhostname + ':8080/restapi/imageUpload'"
+        name="screenshot"
+        :limit="1"
         :on-preview="handlePreview"
         :on-remove="handleRemove"
         :before-remove="beforeRemove"
-        multiple
-        :limit="3"
         :on-exceed="handleExceed"
-        :file-list="fileList"
+        :on-success="onSuccessUpload"
         list-type="picture">
         <el-button size="small" type="primary">Click to upload</el-button>
         <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
@@ -143,6 +143,7 @@ color:grey;
  }
 </style>
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -152,28 +153,82 @@ export default {
         type: '',
         desc: ''
       },
-      fileList: [ { name: 'logo.png', url: require('@/assets/logo.png') }, { name: 's01.png', url: require('@/assets/s01.png') } ]
+      csrf_token: '',
+      filename: '',
+      myhostname: location.hostname,
     }
   },
   methods: {
     handleChange (val) {
       console.log(val)
     },
+    allFieldsEntered () {
+      if (this.form.name === '') {
+        this.$message.error('Please enter your name')
+      }
+      else if (this.form.type === '') {
+        this.$message.error('Please enter the type of feedback')
+      }
+      else if (this.form.desc === '') {
+        this.$message.error('Please enter the description of the feedback')
+      }
+      else {
+        return true
+      }
+      return false
+    },
     onSubmit () {
-      console.log('submit!')
+      if (this.allFieldsEntered()) {
+        const url = 'http://' +  this.myhostname + ':8080/restapi/uploadFeedback'
+        var params = new URLSearchParams()
+        params.append('name', this.form.name)
+        params.append('feedback_type', this.form.type)
+        params.append('description', this.form.desc)
+        params.append('filename', this.filename)
+        axios.post(url, params).then(response => {
+          console.log(response.data.Success)
+          if(response.data.Success==="True") {
+            this.$message('Thank you for your feedback')
+          }
+        })
+      }
     },
     handleRemove (file, fileList) {
-      console.log(file, fileList)
+      if(this.filename!=''){
+        const url = 'http://' + this.myhostname + ':8080/restapi/deleteFile'
+        var params = new URLSearchParams()
+        params.append('filename', this.filename)
+        axios.post(url, params).then(response => {
+          console.log(response.data.Success)
+          if(response.data.Success==="True") {
+            this.$message('File Removed')
+          }
+        })
+      }
     },
     handlePreview (file) {
       console.log(file)
     },
     handleExceed (files, fileList) {
-      this.$message.warning(`The limit is 3, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`)
+      this.$message.warning(`The limit is 1, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`)
     },
     beforeRemove (file, fileList) {
       return this.$confirm(`Delete ${file.name}？`)
+    },
+    onSuccessUpload (response, file, fileList) {
+      if (response != 'Error Uploading File') {
+        this.filename = response
+      }
+    },
+    get_csrf_token () {
+      const url = 'http://' +  this.myhostname + ':8080/restapi/get-token'
+      axios.get(url).then(response => {
+        this.csrf_token = response.data.token
+      })
     }
+  },
+  mounted () {
+    this.get_csrf_token()
   }
 }
 </script>

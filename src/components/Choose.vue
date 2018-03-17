@@ -4,7 +4,7 @@
     <el-button v-on:click="chooseTheme(category.category_name)" type="primary" plain class="white" >
       <el-card :body-style="{ padding: '0px' }">
         <!--<img :src="category.image_url | appendAssetDirectory" class="image">-->
-        <img :src="category.image_url | appendAssetDirectory" class="image">
+        <img :src="category.image_url | appendAssetDirectory" class="image" placeholder="@/assets/logo.png"/>
         <hr>
         <div style="padding: 14px;">
           <span class="category_name">{{category.category_name}}</span>
