@@ -189,6 +189,7 @@ export default {
           console.log(response.data.Success)
           if(response.data.Success==="True") {
             this.$message('Thank you for your feedback')
+            this.$router.push('dashboard')
           }
         })
       }

@@ -19,6 +19,22 @@
 import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import firebase from 'firebase'
+
+var config = {
+  apiKey: "IzaSyAAbV2gMWROc3KN_NZMouEQyN9H0YEw5tk",
+  authDomain: "cloudeity-a3022.firebaseapp.com",
+  databaseURL: "https://cloudeity-a3022.firebaseio.com",
+  projectId: "cloudeity-a3022",
+  storageBucket: "cloudeity-a3022.appspot.com",
+  messagingSenderId: "359065310260"
+};
+firebase.initializeApp(config);
+firebase.database().ref('users/1').set({
+  username: 'uname',
+  email: 'email',
+  profile_picture : 'imageUrl'
+});
 
 export default {
   name: 'app',

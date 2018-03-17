@@ -7,11 +7,11 @@ import App from './App'
 import Routes from './router/index.js'
 import VueRouter from 'vue-router'
 import locale from 'element-ui/lib/locale/lang/en'
-
-//  Vue.config.productionTip = false
+import VueFire from 'vuefire'
 
 Vue.use(ElementUI, { locale })
 Vue.use(VueRouter)
+Vue.use(VueFire)
 Vue.component('icon', Icon)
 
 const router = new VueRouter({
