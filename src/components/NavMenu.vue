@@ -44,6 +44,12 @@
   <span slot="title">Message Details</span>
 </el-menu-item>
 </router-link>
+<router-link to="/login" exact>
+  <el-menu-item index="8">
+  <i class="el-icon-plus"></i>
+  <span slot="title">Login</span>
+</el-menu-item>
+</router-link>
 </el-menu>
 
   </el-col>
@@ -137,6 +143,9 @@ export default {
       case 'messagedetails':
         this.defaultActive = '7'
         break
+      case 'login':
+        this.defaultActive = '8'
+        break
     }
     this.$router.push(path)
     bus.$on('toggleDrawer', data => {
@@ -172,6 +181,9 @@ export default {
         break
       case 'messagedetails':
         this.defaultActive = '7'
+        break
+      case 'login':
+        this.defaultActive = '8'
         break
     }
   }
