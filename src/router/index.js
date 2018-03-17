@@ -6,6 +6,7 @@ import Launchserver from '../components/Launchserver.vue'
 import Paid from '../components/Paid.vue'
 import Messagedetails from '../components/Messagedetails.vue'
 import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
 
 export default [
   { path: '/',
@@ -25,5 +26,7 @@ export default [
   { path: '/messagedetails',
     component: Messagedetails},
   { path: '/login',
-    component: Login}
+    component: Login},
+  { path: '/register',
+    component: Register}
 ]
